@@ -1,0 +1,16 @@
+{% assign tags = include.tags %}
+
+{% if tags.size > 0 %}
+
+  <span class="hidden-xs">&nbsp;|&nbsp;</span>
+  <span class="visible-xs-inline"><br/></span>
+
+  {% if tags.size == 1 %}
+    <i class="fa fa-tag"></i>
+  {% else %}
+    <i class="fa fa-tags"></i>
+  {% endif %}
+
+  {{ tags | join: ',&nbsp;' }}
+
+{% endif %}

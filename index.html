@@ -1,23 +1,21 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="container">
+  <div class="page-header" id="banner">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <img src="https://secure.gravatar.com/avatar/8958c84d99651c0f3c4b156a8b599649?s=200" alt="My Gravator">
+      </div>
+      <div class="col-lg-9 col-md-8 col-sm-6">
+        <p class="lead">
+        Topics about computer systems, performance,
+        haskell programming, AI and (some) mathematics.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
+
