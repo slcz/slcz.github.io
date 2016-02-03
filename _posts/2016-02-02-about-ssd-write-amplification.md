@@ -105,10 +105,9 @@ approaches infinity, the page valid probability becomes,
     </tr>
 </table>
 
-$$\Psi$$ is approximately the oldest blocks written. _Eq._ (5) is due to the fact that
+$$\Psi$$ approximates the valid possiblity of the earliest block written in the system. _Eq._ (5) is due to the fact that
 <script type="math/tex"> \lim_{n \to \infty} (1+\frac{k}{n})^n = e^k</script>.
-Further, write amplification has the following relations to the probability of
-a block being valid,
+Further, write amplification has the following relationship to the block valid probability,
 
 <table class="numbered-equation" cellpadding="0" cellspacing="0">
     <tr>
