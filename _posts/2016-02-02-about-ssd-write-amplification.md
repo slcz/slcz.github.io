@@ -12,9 +12,10 @@ tags: ["SSD", "Flash", "Write Amplification"]
     td.equation-number { text-align:right; width:2em; }
 </style>
 
+Imagine sitting inside a sushi restraunt, where shshi plates are placed on a slowly moving conveyor bar. Customer picks up full plate and leaves empty one on the bar. Suppose a waiter is standing at the end of the bar and moving empty plates to the kitchen, meanwhile keeps adding new plates into the loop. How fast would the waiter moving plates in order to keep the bar full without leaving empty plates on the bar for too long?
+
 While testing on different SSDs, I encountered the same question a few times.
-What is the projected performance degradation when the device is under heavy
-write workload?
+How fast should SSD's flash controller moving blocks around in order to keep up with the new data coming rate?
 
 When a block is finally selected for garbage collection, we could calculate
 the probability that it is not overwritten by a newer write. As below,
@@ -33,7 +34,8 @@ the probability that it is not overwritten by a newer write. As below,
 </table>
 Where,
 
-- $$P_{valid}$$ is the probability that the block is still valid
+- $$P_{valid}$$ is the probability that the block is still valid when it's
+scanned for GC.
 - $$U$$ is the total amount of usable blocks
 - $$W$$ is the total number of of younger writes coming from external user
 
