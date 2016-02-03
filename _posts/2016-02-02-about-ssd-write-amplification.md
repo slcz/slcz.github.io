@@ -12,10 +12,10 @@ tags: ["SSD", "Flash", "Write Amplification"]
     td.equation-number { text-align:right; width:2em; }
 </style>
 
-Imagine sitting inside a sushi restraunt, where shshi plates are placed on a slowly moving conveyor bar. Customer picks up full plate and leaves empty one on the bar. Suppose a waiter is standing at the end of the bar and moving empty plates to the kitchen, meanwhile keeps adding new plates into the loop. How fast would the waiter moving plates in order to keep the bar full without leaving empty plates on the bar for too long?
+Imagine sitting inside a sushi restraunt, where shshi plates are placed on a slowly moving conveyor bar. Customer picks up full plate and leaves empty one on the bar. Suppose a waiter is standing at the end and moving empty plates to the kitchen, meanwhile keeps adding new plates into the loop. How fast would the waiter moving plates in order to keep the bar full without leaving empty plates on the bar for too long?
 
-While testing on different SSDs, I encountered the same question a few times.
-How fast should SSD's flash controller moving blocks around in order to keep up with the new data coming rate?
+While testing on different SSDs, I encountered the same question many times.
+In a somewhat similar situation as the sushi bar, how fast should SSD's flash controller moving fragmented blocks around in order to keep up with the new data coming?
 
 When a block is finally selected for garbage collection, we could calculate
 the probability that it is not overwritten by a newer write. As below,
@@ -79,7 +79,7 @@ From _Eq._ (1), (2) and (3), we get,
         <td>
             <script type="math/tex; mode=display">
             P_{valid}=(1-\frac{1}{U})^W=
-            (1-\frac{\lambda}{f}\frac{1}{\lambda S})^{\lambda S}=
+            (1-\frac{\lambda}{f}\frac{1}{\lambda S})^{W}=
             (1-\frac{\lambda}{f}\frac{1}{W})^W
             </script>
         </td>
