@@ -13,7 +13,7 @@ tags: ["SSD", "Flash", "Write Amplification"]
 </style>
 
 While testing on different SSDs, I encountered the same question a few times.
-What is the projected performance degradataion when the device is under heavy
+What is the projected performance degradation when the device is under heavy
 write workload?
 
 When a block is finally selected for garbage collection, we could calculate
@@ -34,13 +34,13 @@ the probability that it is not overwritten by a newer write. As below,
 Where,
 
 - $$P_{valid}$$ is the probability that the block is still valid
-- $$U$$ is the total amount of useable blocks
+- $$U$$ is the total amount of usable blocks
 - $$W$$ is the total number of of younger writes coming from external user
 
 Due to lazy GC, $$U, W$$ are both very large numbers that are in the same
 magnitude as the total physical capacity (millions to billions of blocks).
 We further introduce 2 variables, $$f$$ and $$\lambda$$. $$f$$
- is the ratio of useable capacity to physical capacity. $$\lambda$$,
+ is the ratio of usable capacity to physical capacity. $$\lambda$$,
 defined as the ratio of external writes to total device writes, is the
 inverse of write amplification, $$\omega$$.
 
@@ -87,7 +87,7 @@ From _Eq._ (1), (2) and (3), we get,
     </tr>
 </table>
 
-In the case where garbage collectio is lazy, $$W$$ is large. As $$W$$
+In the case where garbage collection is lazy, $$W$$ is large. As $$W$$
 approaches infinity, the page valid probability becomes,
 
 <table class="numbered-equation" cellpadding="0" cellspacing="0">
@@ -165,7 +165,7 @@ Put _Eq._ (5) and (7) together,
 Where,
 
 - $$\omega$$ is the write amplification,
-- $$f$$ is the ratio of physical capacity to useable capacity.
+- $$f$$ is the ratio of physical capacity to usable capacity.
 
 Notice _Eq._ (9) does not hae elementary solution, but it can be solved by
 using [lambertW function][lamberW].
@@ -196,11 +196,11 @@ using [lambertW function][lamberW].
     </tr>
 </table>
 
-_Eq._ (10) and (11) solves write amplification as a function of useable 
+_Eq._ (10) and (11) solves write amplification as a function of usable 
 ratio. With a good [LambertW function approximator][approx], we can
 calculate,
 
-| useable-ratio | write-amplification |
+| usable-ratio | write-amplification |
 |--------------:| ------------------: |
 | 95%           | 10.17               |
 | 90%           | 5.18                |
@@ -215,7 +215,7 @@ calculate,
 
 Or plot,
 
-<img alt="write amp to useable ratio" width="800" src="/assets/wa.png"/>
+<img alt="write amp to usable ratio" width="800" src="/assets/wa.png"/>
 
 [lamberW]: https://en.wikipedia.org/wiki/Lambert_W_function
 [approx]:  http://keithbriggs.info/software/LambertW.c
