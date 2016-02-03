@@ -30,12 +30,11 @@ Another point that may not be so obvious is that in terms of distribution of hol
 
 <img alt="fragmentation distribution" width="500" src="/assets/holes.png"/>
 
-In a perfectly randomly distributed workload where there is no obvious distinction of address pattern locality, multiple-queue GC algorithm won't work any better than a naive single queue, round-robin GC algorithm. Therefore, we choose the simpler GC to model random workload write amplification. Also, we choose to model the GC algorithm as being lazy, i.e., GC only happens when there is no free space left. In another words, gc-threshold is close to zero.
+In a perfectly randomly distributed workload where there is no obvious distinction of address pattern locality, multiple-queue GC algorithm won't work any better than a naive single queue, round-robin GC algorithm. Therefore, I choose the simpler GC to model random workload write amplification. Also, I choose to model the GC algorithm as being lazy, i.e., GC only happens when there is no free space left. In another words, gc-threshold is close to zero.
 
 <img alt="multiple stream GC" width="500" src="/assets/naive_gc.png"/>
 
-When a block is finally selected for garbage collection, we could calculate
-the probability that it is not overwritten by a newer write. As below,
+While it is possible to run a simulator and get write amplification distribution on space over-provisioning, wouldn't it be intersting to try to derive the model analytically? We know when a block is finally picked up for garbage collection, we could calculate the probability that it is not overwritten by a newer write. As below,
 
 <table class="numbered-equation" cellpadding="0" cellspacing="0">
     <tr>
