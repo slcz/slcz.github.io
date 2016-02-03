@@ -30,7 +30,7 @@ In a randomly distributed workload where there is no obvious distinction of addr
 
 While it is possible to run a simulator and get write amplification distribution on space over-provisioning, wouldn't it be interesting to try to derive the model analytically? We know for any block that carries data, we could calculate the probability that it is still valid (not overwritten). As below,
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -54,7 +54,7 @@ $$f$$ and $$\lambda$$. $$f$$
 defined as the ratio of host writes to total device writes, is the
 inverse of write amplification, which we denoted as $$\omega$$.
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -67,7 +67,7 @@ inverse of write amplification, which we denoted as $$\omega$$.
     </tr>
 </table>
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -82,7 +82,7 @@ inverse of write amplification, which we denoted as $$\omega$$.
 
 From _Eq._ (1), (2) and (3), we get,
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -100,7 +100,7 @@ From _Eq._ (1), (2) and (3), we get,
 In the case where garbage collection is lazy, $$W$$ is large. As $$W$$
 approaches infinity, the page valid probability becomes,
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -117,7 +117,7 @@ $$\Psi$$ approximates the valid probability of the earliest block written in the
 <script type="math/tex"> \lim_{n \to \infty} (1+\frac{k}{n})^n = e^k</script>.
 Also, write amplification has the following relationship to the block valid probability,
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -130,7 +130,7 @@ Also, write amplification has the following relationship to the block valid prob
     </tr>
 </table>
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -145,7 +145,7 @@ Also, write amplification has the following relationship to the block valid prob
 
 With _Eq._ (5) and (7),
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -158,7 +158,7 @@ With _Eq._ (5) and (7),
     </tr>
 </table>
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -179,7 +179,7 @@ Where,
 While _Eq._ (9) does not have elementary solution, it can be solved by
 using [lambertW function][lamberW].
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -192,7 +192,7 @@ using [lambertW function][lamberW].
     </tr>
 </table>
 
-<table class="numbered-equation" cellpadding="0" cellspacing="0">
+<table class="numbered-equation">
     <tr>
         <td>
             <script type="math/tex; mode=display">
@@ -209,18 +209,18 @@ _Eq._ (10) and (11) solves write amplification as a function of usable
 ratio. With a good [LambertW function approximator][approx], I
 plug in the numbers and get the following table,
 
-| usable-ratio | write-amplification |
-|--------------:| ------------------: |
-| 95%           | 10.17               |
-| 90%           | 5.18                |
-| 85%           | 3.52                |
-| 80%           | 2.69                |
-| 75%           | 2.20                |
-| 70%           | 1.88                |
-| 65%           | 1.65                |
-| 60%           | 1.48                |
-| 55%           | 1.35                |
-| 50%           | 1.26                |
+| UsableRatio  || WriteAmplification  |
+|:-------------|---| ------------------: |
+| 95%          || 10.17               |
+| 90%          || 5.18                |
+| 85%          || 3.52                |
+| 80%          || 2.69                |
+| 75%          || 2.20                |
+| 70%          || 1.88                |
+| 65%          || 1.65                |
+| 60%          || 1.48                |
+| 55%          || 1.35                |
+| 50%          || 1.26                |
 
 Also plotted,
 
