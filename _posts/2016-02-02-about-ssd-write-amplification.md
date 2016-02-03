@@ -12,6 +12,10 @@ tags: ["SSD", "Flash", "Write Amplification"]
     td.equation-number { text-align:right; width:2em; }
 </style>
 
+While testing on different SSDs, I encountered the same question a few times.
+What is the projected performance degradataion when the device is under heavy
+write workload?
+
 When a block is finally selected for garbage collection, we could calculate
 the probability that it is not overwritten by a newer write. As below,
 
@@ -211,7 +215,7 @@ calculate,
 
 Or plot,
 
-<img alt="write amp to useable ratio" src="/assets/wa.png"/>
+<img alt="write amp to useable ratio" width="800" src="/assets/wa.png"/>
 
 [lamberW]: https://en.wikipedia.org/wiki/Lambert_W_function
 [approx]:  http://keithbriggs.info/software/LambertW.c
