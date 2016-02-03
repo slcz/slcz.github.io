@@ -1,15 +1,35 @@
 ---
-layout: default
+layout: page
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+<link rel="stylesheet" href="/assets/css/syntax.min.css">
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+<div class="page-header">
+<h2 class="with-tagline">{{ page.title }}</h2>
+<p class="tagline">
+<i class="fa fa-calendar"></i>&nbsp;
+{{ page.date | date_to_long_string }}
+{% include listtags.html tags=page.tags %}
+</p>
+</div>
 
+<article class="full">
+{{ content }}
 </article>
+
+<div class="panel panel-default" style="margin-top:20px">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">
+        <img alt="Creative Commons License" height="40" src="/assets/media/CC-by-nc-sa.jpg" />
+      </div>
+      <div class="col-md-8">
+        <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script async src="/assets/js/katex_render.min.js"></script>
+
+{% include disqus.html %}
