@@ -12,10 +12,11 @@ tags: ["SSD", "Flash", "Write Amplification"]
     td.equation-number { text-align:right; width:2em; }
 </style>
 
-Imagine sitting inside a sushi restraunt, where shshi plates are placed on a slowly moving conveyor bar. Customer picks up full plate and leaves empty one on the bar. Suppose a waiter is standing at the end and moving empty plates to the kitchen, meanwhile keeps adding new plates into the loop. How fast would the waiter moving plates in order to keep the bar full without leaving empty plates on the bar for too long?
+Imagine sitting inside a sushi restraunt, where shshi plates are placed on a slowly moving conveyor bar. Customer picks up full plates and leaves empty ones on the bar. Suppose a waiter is standing at the end of conveyor and moving empty plates to the kitchen, meanwhile keeps adding new plates into the loop. How fast should the waiter moves the plates in order to keep the bar full without leaving empty plates on the bar for too long?
 
-While testing on SSDs, I encountered the same question many times.
-In a somewhat similar situation as the sushi bar metaphor, a flash device is written in a sequtial manner regardless of incoming write's address pattern. Considering a simplified case, suppose external users (applications) write to the device consistently and the workload is randomly distributed across the entire usable space. How fast should the SSD move fragmented blocks around in order to keep up with the data coming rate?
+<img alt="" width="800" src="/assets/sushi.jpg"/>
+
+While working on flash controller and playing with SSDs, I encountered the same question many times. In a somewhat similar situation as the sushi bar metaphor, a flash device is written sequentially regardless of incoming write's address pattern. Considering a simplified case, suppose external users (applications) write to the device consistently and the workload is randomly distributed across the entire usable space. How fast should the SSD move fragmented blocks around in order to keep up with the data coming rate?
 
 All the SSDs expose a smaller capacity to the applications than the physical capacity. We call the difference "space overprovisioning", for a given workload, the more the reservation, the less work flash's garbage collector has to do to repack the working set.
 
