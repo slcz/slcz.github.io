@@ -6,12 +6,6 @@ categories:
 tags: ["SSD", "Flash", "Write Amplification"]
 ---
 
-<style>
-    table.numbered-equation { width:99%;  text-align: center; vertical-align: middle;
-        margin-top:0.5em; margin-bottom:0.5em; line-height: 2em; font-size: 60%; }
-    td.equation-number { text-align:right; width:2em; }
-</style>
-
 Imagine sitting inside a sushi restaurant, where shshi plates are placed on a slowly moving conveyor bar. Customer picks up full plates and leaves empty ones on the bar. Suppose a waiter is standing at the end of conveyor and moving empty plates to the kitchen, meanwhile keeps adding new plates into the loop. How fast should the waiter moves the plates in order to keep the bar full without leaving empty plates on the bar for too long?
 
 <img alt="" width="400" src="/assets/sushi.jpg"/>
