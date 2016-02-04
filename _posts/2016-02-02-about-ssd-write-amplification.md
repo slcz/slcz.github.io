@@ -32,7 +32,7 @@ While it is possible to run a simulator and get write amplification distribution
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             P_{valid}=(1-\frac{1}{U})^W
             </script>
@@ -56,7 +56,7 @@ inverse of write amplification, which we denoted as $$\omega$$.
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             U=fS
             </script>
@@ -69,7 +69,7 @@ inverse of write amplification, which we denoted as $$\omega$$.
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             W=\lambda S=\frac{S}{\omega}
             </script>
@@ -84,7 +84,7 @@ From _Eq._ (1), (2) and (3), we get,
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             P_{valid}=(1-\frac{1}{U})^W=
             (1-\frac{\lambda}{f}\frac{1}{\lambda S})^{W}=
@@ -102,7 +102,7 @@ approaches infinity, the page valid probability becomes,
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             \Psi=\lim_{W \to \infty} P_{valid}=\lim_{W \to \infty}(1-\frac{\lambda}{f}\frac{1}{W})^W=e^{-\frac{\lambda}{f}}
             </script>
@@ -119,7 +119,7 @@ Also, write amplification has the following relationship to the block valid prob
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             \omega=\frac{1}{\lambda}=\frac{1}{1-\Psi}
             </script>
@@ -132,7 +132,7 @@ Also, write amplification has the following relationship to the block valid prob
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             \Psi=1-\lambda
             </script>
@@ -147,7 +147,7 @@ With _Eq._ (5) and (7),
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             1-\lambda=e^{-\frac{\lambda}{f}}
             </script>
@@ -160,7 +160,7 @@ With _Eq._ (5) and (7),
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             1-\frac{1}{\omega}=e^{-\frac{1}{f\omega}}
             </script>
@@ -181,7 +181,7 @@ using [lambertW function][lamberW].
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             \omega=\frac{\zeta}{\zeta-W(\zeta e^\zeta)}
             </script>
@@ -194,7 +194,7 @@ using [lambertW function][lamberW].
 
 <table class="numbered-equation">
     <tr>
-        <td>
+        <td class="eq">
             <script type="math/tex; mode=display">
             \zeta=-\frac{1}{f}
             </script>
@@ -209,18 +209,18 @@ _Eq._ (10) and (11) solves write amplification as a function of usable
 ratio. With a good [LambertW function approximator][approx], I
 plug in the numbers and get the following table,
 
-| UsableRatio  || WriteAmplification  |
-|:-------------|---| ------------------: |
-| 95%          || 10.17               |
-| 90%          || 5.18                |
-| 85%          || 3.52                |
-| 80%          || 2.69                |
-| 75%          || 2.20                |
-| 70%          || 1.88                |
-| 65%          || 1.65                |
-| 60%          || 1.48                |
-| 55%          || 1.35                |
-| 50%          || 1.26                |
+| UsableRatio  |  WriteAmplification  |
+|------------- |  ------------------  |
+| 95%          |  10.17               |
+| 90%          |  5.18                |
+| 85%          |  3.52                |
+| 80%          |  2.69                |
+| 75%          |  2.20                |
+| 70%          |  1.88                |
+| 65%          |  1.65                |
+| 60%          |  1.48                |
+| 55%          |  1.35                |
+| 50%          |  1.26                |
 
 Also plotted,
 
